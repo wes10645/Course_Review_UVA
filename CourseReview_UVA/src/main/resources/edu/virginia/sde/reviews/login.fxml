@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" prefHeight="503.0" prefWidth="842.0" spacing="10" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.virginia.sde.reviews.controllers.LoginController">
+    <HBox alignment="CENTER" maxWidth="Infinity" prefHeight="139.0" prefWidth="524.0" style="-fx-background-color: #232D4B;">
+        <ImageView fitHeight="127.0" fitWidth="114.0" preserveRatio="true">
+            <image>
+                <Image url="@/edu/virginia/sde/reviews/images/UVa.png" />
+            </image>
+        </ImageView>
+    </HBox>
+
+    <Label prefHeight="125.0" prefWidth="449.0" style="-fx-font-size: 40px; -fx-font-weight: bold; -fx-text-fill: #232D4B;" text="UVA COURSE REVIEWS" textAlignment="CENTER">
+      <font>
+         <Font name="Arial Bold" size="40.0" />
+      </font>
+      <VBox.margin>
+         <Insets top="10.0" />
+      </VBox.margin>
+    </Label>
+
+    <TextField fx:id="username" prefHeight="25.0" prefWidth="291.0" style="-fx-prompt-text-fill: #232D4B;" promptText="Username" >
+      <VBox.margin>
+          <Insets left="300.0" right="300.0" />
+      </VBox.margin></TextField>
+    <PasswordField fx:id="password" promptText="Password" style="-fx-prompt-text-fill: #232D4B;">
+      <VBox.margin>
+          <Insets left="300.0" right="300.0" bottom="10.0"/>
+      </VBox.margin></PasswordField>
+
+    <HBox alignment="CENTER" prefHeight="25.0" prefWidth="431.0" spacing="10">
+        <Button defaultButton="true" onAction="#handleLogin" text="Log In">
+         <HBox.margin>
+            <Insets />
+         </HBox.margin></Button>
+        <Button onAction="#handleCreateAccount" text="Create Account" />
+        <Button onAction="#handleQuit" text="Quit" />
+    </HBox>
+
+    <Label fx:id="error" textFill="red" textAlignment="CENTER" style="-fx-font-size: 14px; -fx-font-weight: bold;" prefWidth="400" wrapText="true" />
+</VBox>

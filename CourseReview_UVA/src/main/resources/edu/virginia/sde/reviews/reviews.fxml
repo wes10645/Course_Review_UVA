@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.fxml.FXML?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="edu.virginia.sde.reviews.controllers.ReviewController"
+      spacing="10">
+
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+    <fx:include source="banner.fxml"/>
+
+    <!-- Course Info -->
+    <HBox spacing="10">
+        <Label fx:id="courseInfoLabel" style="-fx-font-size: 18px;"/>
+        <Label fx:id="averageRatingLabel" style="-fx-font-size: 18px;"/>
+    </HBox>
+
+    <!-- Add/Edit Review Form -->
+    <VBox fx:id="reviewForm" spacing="10" visible="false">
+        <Label fx:id="reviewFormLabel" style="-fx-font-size: 16px;"/>
+        <HBox spacing="10">
+            <Label text="Rating:"/>
+            <ComboBox fx:id="ratingComboBox" prefWidth="100"/>
+        </HBox>
+        <HBox spacing="10">
+            <Label text="Comment:"/>
+            <TextArea fx:id="commentTextArea" prefRowCount="3" prefWidth="400"/>
+        </HBox>
+        <HBox spacing="10">
+            <Button fx:id="submitButton" defaultButton="true" text="Submit" onAction="#handleSubmitReview"/>
+            <Button fx:id="deleteButton" text="Delete" onAction="#handleDeleteReview" visible="false"/>
+        </HBox>
+    </VBox>
+
+    <!-- Reviews List -->
+    <Label text="All Reviews" style="-fx-font-size: 16px;"/>
+    <TableView fx:id="reviewsTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="ratingColumn" text="Rating"/>
+            <TableColumn fx:id="timestampColumn" text="Timestamp"/>
+            <TableColumn fx:id="commentColumn" text="Comment"/>
+        </columns>
+    </TableView>
+
+    <!-- Back Button -->
+    <HBox spacing="10">
+        <Button text="Back" onAction="#handleBack"/>
+    </HBox>
+</VBox>
