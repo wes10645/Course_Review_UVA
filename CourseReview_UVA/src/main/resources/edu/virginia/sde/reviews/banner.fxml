@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<HBox alignment="CENTER" maxWidth="Infinity" prefHeight="100.0" style="-fx-background-color: #232D4B;">
+    <ImageView fitHeight="80.0" fitWidth="80.0" preserveRatio="true">
+        <image>
+            <Image url="@/edu/virginia/sde/reviews/images/UVa.png" />
+        </image>
+    </ImageView>
+    <Label text="UVA COURSE REVIEWS" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: white;">
+        <font>
+            <Font name="Arial Bold" size="32.0" />
+        </font>
+        <HBox.margin>
+            <Insets left="20.0" />
+        </HBox.margin>
+    </Label>
+</HBox> 

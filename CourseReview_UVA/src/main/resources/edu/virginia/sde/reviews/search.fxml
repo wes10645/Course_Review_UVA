@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.fxml.FXML?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="edu.virginia.sde.reviews.controllers.SearchController"
+      spacing="10">
+
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+    <fx:include source="banner.fxml"/>
+    
+    <HBox spacing="10">
+        <TextField fx:id="subjectField" promptText="Subject (e.g., CS)"/>
+        <TextField fx:id="numberField" promptText="Number (e.g., 3140)"/>
+        <TextField fx:id="titleField" promptText="Title"/>
+        <Button defaultButton="true" text="Search" onAction="#handleSearch"/>
+    </HBox>
+
+    <TableView fx:id="courseTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="subjectColumn" text="Subject"/>
+            <TableColumn fx:id="numberColumn" text="Number"/>
+            <TableColumn fx:id="titleColumn" text="Title"/>
+            <TableColumn fx:id="ratingColumn" text="Average Rating"/>
+        </columns>
+    </TableView>
+
+    <HBox spacing="10">
+        <Button text="Add Course" onAction="#handleAddCourse"/>
+        <Button text="My Reviews" onAction="#handleMyReviews"/>
+        <Button text="Log Out" onAction="#handleLogout"/>
+    </HBox>
+</VBox>

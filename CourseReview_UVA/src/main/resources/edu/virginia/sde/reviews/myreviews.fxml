@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.fxml.FXML?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="edu.virginia.sde.reviews.controllers.MyReviewsController"
+      spacing="10">
+
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+    <fx:include source="banner.fxml"/>
+
+    <Label text="My Reviews" style="-fx-font-size: 18px;"/>
+
+    <TableView fx:id="myReviewsTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="courseColumn" text="Course"/>
+            <TableColumn fx:id="ratingColumn" text="Rating"/>
+            <TableColumn fx:id="timestampColumn" text="Timestamp"/>
+        </columns>
+    </TableView>
+
+    <HBox spacing="10">
+        <Button text="Back" onAction="#handleBack"/>
+    </HBox>
+</VBox>
